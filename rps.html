@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Rock Paper Scissors</title>
+    <script src="rock-paper-scissors/rps.js"></script>
 </head>
 <body>
-    
+  <script> 
+    // Rock Paper Scissors 
+    //text introducing game
+    //create function to store player input
+    //text input for player to type their choice
+    //play button to start game
+    //function to generate random computer play//
+    function computerPlay(min, max) {
+        min = Math.ceil(1);
+        max = Math.floor(3);
+        return Math.floor(Math.random() * (4-1) + 1);
+    }
+    computerPlay();
+    //create conditional for game outcomes
+    //if win create message "You Win"
+    //if tie create message "Tie Game"
+    //else create message "You lose, try again"
+ 
+    </script>
 </body>
 </html>
