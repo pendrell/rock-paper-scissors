@@ -22,10 +22,13 @@
     const y = "Paper";
     const z = "Scissors";
     const randomInteger = Math.floor(Math.random() * (3-1 + 1) + 1);
-    const playerSelection = "Rock";
+    const playerInput = "rock";
+    const playerSelection = playerInput.charAt(0).toUpperCase() + playerInput.slice(1).toLowerCase()
     const computerSelection = computerPlay();
-    
+    let result = "";
 
+
+    
     function computerPlay() {
         if (randomInteger == 1) {
         return x;
@@ -37,8 +40,34 @@
     }
     console.log(computerPlay())
 
+    //function that plays 1 round 
+    //two parameters - playerSelection and computerSelection
+    //create a conditional that evaluates player and computer choice to determine a winner
+    //return string that declares the winner
+    
 
+    function playRound(playerSelection, computerSelection) {
 
+        switch (true) {
+            case playerSelection === "Rock" && computerSelection === "Rock":
+            case playerSelection === "Paper" && computerSelection === "Paper":
+            case playerSelection === "Scissors" && computerSelection === "Scissors":
+            return "Draw! Try again!";
+           
+
+            case playerSelection === "Rock" && computerSelection === "Paper":
+            case playerSelection === "Paper" && computerSelection === "Scissors":
+            case playerSelection === "Scissors" && computerSelection === "Rock":
+            return `You lose! ${computerSelection} beats ${playerSelection}`;
+            
+
+            case playerSelection === "Rock" && computerSelection === "Scissors":
+            case playerSelection === "Paper" && computerSelection === "Rock":
+            case playerSelection === "Scissors" && computerSelection === "Paper":
+            return `You win! ${playerSelection} beats ${computerSelection}`;
+        }
+    }
+    console.log(playRound(playerSelection, computerSelection))
 
     
 
